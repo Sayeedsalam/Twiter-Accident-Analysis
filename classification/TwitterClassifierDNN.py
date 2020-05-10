@@ -157,7 +157,7 @@ for message in kafka_consumer:
         #print("Accident Related Tweet Found")
         #kafka_producer.send("accident_tweet", value=bytes(json.dumps(tweet), encoding="utf-8"))
         accident_tweet_count += 1
-        output_file.write(tweet["id"]+"\n")
+        output_file.write(tweet["id_str"]+"\n")
         output_file.flush()
         print("Number of accident related tweets found, ", accident_tweet_count)
     else:

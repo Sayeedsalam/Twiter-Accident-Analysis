@@ -83,7 +83,7 @@ for message in kafka_consumer:
         upload_cluster = max_cluster
 
 
-    es.index(index="corona_tweets", id=id, doc_type="Message", body=tweet)
+    es.index(index="accident_tweets_v3", id=id, doc_type="Message", body=tweet)
 
 
 

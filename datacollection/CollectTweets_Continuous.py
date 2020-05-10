@@ -241,7 +241,7 @@ def twitterSearcher(cities): # main function that controls both types of searche
 
 def scheduleIteration(iterations, cities):  # scheduler
     global numInc
-    schedule.every(2).minutes.do(search_without_location("corona"), cities)
+    schedule.every(2).minutes.do(twitterSearcher, cities)
 
     if iterations == -1:
         schedule.run_pending()
@@ -253,7 +253,8 @@ def scheduleIteration(iterations, cities):  # scheduler
 
 
 if __name__ == '__main__':
-    #cities = ["New York,40.7128,-74.0060", "Lagos,6.5244,3.3792", "Dallas,32.7767,-96.7970"]
+    cities = ["New York,40.7128,-74.0060", "Lagos,6.5244,3.3792", "Dallas,32.7767,-96.7970"]
     cities = ["Lagos,6.5244,3.3792"]
-    search_without_location("corona")
+    #search_without_location("corona")
+    twitterSearcher(cities)
     scheduleIteration(1000000, cities)
